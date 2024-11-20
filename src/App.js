@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Register from "./register";
+import Login from "./login";
+import Chatify from "./chatify"; // Correctly imported the Chatify component
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        {/* Set Register page as the default starting page */}
+        <Route path="/" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        {/* Corrected route to use the proper component name (Chatify) */}
+        <Route path="/chatify" element={<Chatify />} />
+      </Routes>
     </div>
   );
 }
